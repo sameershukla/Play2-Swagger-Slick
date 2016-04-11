@@ -1,0 +1,17 @@
+# Routes for Consumer operations
+GET    			/consumer/$id<[0-9]+>			  	controllers.ConsumerController.byId(id: Long)
+GET    			/consumers  	      				controllers.ConsumerController.list
+POST   			/consumer		  					controllers.ConsumerController.insert
+DELETE 			/consumer/$id<[0-9]+>	  			controllers.ConsumerController.delete(id: Long)	
+PUT    			/consumer          					controllers.ConsumerController.update
+
+
+GET    			/api-docs.json/consumer             controllers.ApiHelpController.getResource(path = "/consumer")
+
+
+# Application specific Routes, should be available to entire application
+GET    			/health            					controllers.Application.index
+GET    			/swagger               				controllers.Application.swagger
+
+GET /assets/*file    controllers.Assets.at(path="/public", file)
+GET /webjars/*file   controllers.WebJarAssets.at(file)
